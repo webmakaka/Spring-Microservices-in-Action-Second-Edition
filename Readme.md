@@ -3,7 +3,10 @@
 
 <br/>
 
-![Spring Microservices in Action, Second Edition, Video Edition](/img/Spring-Microservices-in-Action.jpg 'Spring Microservices in Action, Second Edition, Video Edition')
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/webmakaka/Spring-Microservices-in-Action-Second-Edition/master/img/Spring-Microservices-in-Action.jpg" alt="Spring Microservices in Action, Second Edition, Video Edition"/>
+</p>
 
 
 <br/>
