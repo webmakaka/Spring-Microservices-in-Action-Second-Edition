@@ -23,7 +23,7 @@ Let's read, watch, build, update code, etc.
 <br/>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/webmakaka/Spring-Microservices-in-Action-Second-Edition/master/img/Spring-Microservices-in-Action.jpg" alt="Spring Microservices in Action, Second Edition, Video Edition"/>
+  <img src="https://raw.githubusercontent.com/webmakaka/Spring-Microservices-in-Action-Second-Edition/master/img/ch01-pic01.png" alt="Spring Microservices in Action, Second Edition, Video Edition"/>
 </p>
 
 <br/>
