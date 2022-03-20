@@ -15,10 +15,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Mave
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ihuaylupo/manning-smia-chapter1
+$ git clone https://github.com/ihuaylupo/manning-smia
 
 # Go into the repository
-$ cd SimpleApplication
+$ cd chapter01/simple-application/
 
 # Install dependencies
 $ mvn install
@@ -29,9 +29,40 @@ or
 $ java -jar target/SimpleApplication-0.0.1-SNAPSHOT.jar
 ```
 
-## Contact
+<br/>
 
-I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd want to say about this software.
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8080/hello/javadev?lastName=marley \
+    | jq
+```
 
-### Contributing
-Feel free to file an issue if it doesn't work for your code sample. Thanks.
+
+<br/>
+
+```
+// POST
+$ curl \
+    --data '{
+      "firstName":"javadev",
+      "lastName":"marley"
+    }' \
+    --header "Content-Type: application/json" \
+    --request POST \
+    --url http://localhost:8080/hello \
+    | jq
+```
+
+<br/>
+
+**response:**
+
+```
+{
+  "message": "Hello javadev marley"
+}
+
+```
