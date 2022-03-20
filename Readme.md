@@ -29,17 +29,17 @@ Let's read, watch, build, update code, etc.
 <br/>
 
 :heavy_check_mark: [chapter 01](/chapter01/Readme.md)  
-:question: [chapter 02]  
+:question: chapter 02  
 :heavy_check_mark: [chapter 03](/chapter03/Readme.md)  
-:x: [chapter 04]  
-:x: [chapter 05]  
-:x: [chapter 06]  
-:x: [chapter 07]  
-:x: [chapter 08]  
-:x: [chapter 09]  
-:x: [chapter 10]  
-:x: [chapter 11]  
-:x: [chapter 12]  
+:x: [chapter 04](/chapter04/Readme.md)    
+:x: [chapter 05](/chapter05/Readme.md)    
+:x: [chapter 06](/chapter06/Readme.md)    
+:x: [chapter 07](/chapter07/Readme.md)    
+:x: [chapter 08](/chapter08/Readme.md)    
+:x: [chapter 09](/chapter09/Readme.md)    
+:x: [chapter 10](/chapter10/Readme.md)    
+:x: [chapter 11](/chapter11/Readme.md)    
+:x: [chapter 12](/chapter12/Readme.md)    
 
 <br/><br/>
 

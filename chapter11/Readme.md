@@ -63,3 +63,14 @@ I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd wa
 
 ### Contributing
 Feel free to file an issue if it doesn't work for your code sample. Thanks.
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**
+
+Any questions in english: <a href="https://javadev.org/chat/">Telegram Chat</a>  
+Любые вопросы на русском: <a href="https://javadev.ru/chat/">Телеграм чат</a>
