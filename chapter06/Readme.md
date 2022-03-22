@@ -53,6 +53,67 @@ You can find the database script as well in the docker directory.
 
 
 
+<br/>
+
+```
+// Started working after recreate
+$ docker-compose -f docker/docker-compose.yml rm
+$ docker-compose -f docker/docker-compose.yml up
+```
+
+<br/>
+
+
+```
+// CHECK configserver
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8071/licensing-service/dev \
+    | jq
+```
+
+<br/>
+
+
+```
+$ docker-compose restart eurekaserver
+$ docker-compose logs eurekaserver
+```
+
+
+
+<br/>
+
+
+http://localhost:8070/
+
+
+<br/>
+
+![Application](/img/ch06-pic01.png?raw=true)
+
+
+
+<br/>
+
+http://localhost:8070/eureka/apps/
+
+<br/>
+
+
+```
+// CHECK eureka
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --request GET \
+    --url http://localhost:8070/eureka/apps/organization-service \
+    | jq
+```
+
 <br/><br/>
 
 ---
