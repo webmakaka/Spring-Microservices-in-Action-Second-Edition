@@ -22,7 +22,7 @@ $ git clone https://github.com/ihuaylupo/manning-smia
 
 # Go into the repository, by chaning to the directory where you have downloaded the 
 # chapter 5 source code
-$ cd chapter05
+$ cd apps/chapter05
 
 # The build command
 
@@ -88,7 +88,7 @@ $ docker-compose -f docker/docker-compose.yml up
 <br/>
 
 ```
-// Start working after recreate
+// Started working after recreate
 $ docker-compose -f docker/docker-compose.yml rm
 $ docker-compose -f docker/docker-compose.yml up
 ```

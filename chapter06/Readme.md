@@ -26,7 +26,7 @@ $ git clone https://github.com/ihuaylupo/manning-smia
 
 # Go into the repository, by changing to the directory where you have downloaded the 
 # chapter 6 source code and select whether you want the initial or final configuration
-$ cd chapter6/Initial or cd chapter6/Final
+$ cd apps/chapter06
 
 # To build the code examples for Chapter 6 as a docker image, open a command-line 
 # window and execute the following command:
