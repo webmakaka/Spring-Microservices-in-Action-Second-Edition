@@ -22,15 +22,7 @@ $ git clone https://github.com/ihuaylupo/manning-smia
 
 # Go into the repository, by chaning to the directory where you have downloaded the 
 # chapter 5 source code
-$ cd chapter5
-
-# To build the code examples for Chapter 5 as a docker image, open a command-line 
-# window and execute the following command:
-$ mvn clean package dockerfile:build
-
-# Now we are going to use docker-compose to start the actual image.  To start the docker image, stay in the directory containing  your chapter 5 source code and  Run the following command: 
-$ docker-compose -f docker/docker-compose.yml up
-```
+$ cd chapter05
 
 # The build command
 
@@ -46,13 +38,209 @@ If everything starts correctly you should see a bunch of Spring Boot information
 
 # Database
 You can find the database script as well in the docker directory.
+```
 
-## Contact
+<br/>
 
-I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd want to say about this software.
+### Run configserver local 
 
-### Contributing
-Feel free to file an issue if it doesn't work for your code sample. Thanks.
+```
+$ cd configserver
+$ mvn spring-boot:run
+```
+
+<br/>
+
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8071/licensing-service/dev \
+    | jq
+```
+
+
+<br/>
+
+
+http://0.0.0.0:8200/ui/vault/auth
+
+
+<br/>
+
+### As a docker image
+
+```
+// To build the code examples for Chapter 5 as a docker image, open a command-line 
+// window and execute the following command:
+$ mvn clean package dockerfile:build
+```
+
+<br/>
+
+```
+// Now we are going to use docker-compose to start the actual image.  To start the docker image, stay in the directory containing  your chapter 5 source code and  Run the following command: 
+$ docker-compose -f docker/docker-compose.yml up
+```
+
+<br/>
+
+```
+// Start working after recreate
+$ docker-compose -f docker/docker-compose.yml rm
+$ docker-compose -f docker/docker-compose.yml up
+```
+
+<br/>
+
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8071/licensing-service/default \
+    | jq
+```
+
+
+<br/>
+
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8071/licensing-service/prod \
+    | jq
+```
+
+<br/>
+
+
+```
+{
+  "name": "licensing-service",
+  "profiles": [
+    "prod"
+  ],
+  "label": null,
+  "version": null,
+  "state": null,
+  "propertySources": [
+    {
+      "name": "classpath:/config/licensing-service-prod.properties",
+      "source": {
+        "example.property": "I AM PROD",
+        "spring.datasource.url": "jdbc:postgresql://database:5432/ostock_prod",
+        "spring.datasource.username": "postgres",
+        "spring.datasource.password": "postgres"
+      }
+    },
+    {
+      "name": "classpath:/config/licensing-service.properties",
+      "source": {
+        "example.property": "I AM THE DEFAULT",
+        "spring.jpa.hibernate.ddl-auto": "none",
+        "spring.jpa.database": "POSTGRESQL",
+        "spring.datasource.platform": "postgres",
+        "spring.jpa.show-sql": "true",
+        "spring.jpa.hibernate.naming-strategy": "org.hibernate.cfg.ImprovedNamingStrategy",
+        "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.PostgreSQLDialect",
+        "spring.database.driverClassName": "org.postgresql.Driver",
+        "spring.datasource.testWhileIdle": "true",
+        "spring.datasource.validationQuery": "SELECT 1",
+        "management.endpoints.web.exposure.include": "*",
+        "management.endpoints.enabled-by-default": "true"
+      }
+    }
+  ]
+}
+```
+
+
+<br/>
+
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8080/actuator/env \
+    | jq
+```
+
+<br/>
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8071/actuator/env \
+    | jq
+```
+
+<br/>
+
+### Vault
+
+<br/>
+
+```
+$ docker run -d -p 8200:8200 --name vault -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' vault
+```
+
+<br/>
+
+
+```
+http://0.0.0.0:8200/ui/vault/auth
+
+token: myroot
+```
+
+<br/>
+
+Check the book how to create and set vault
+
+<br/>
+
+```
+$ curl -X "GET" "http://localhost:8071/licensing-service/default" -H "X-Config-Token: myroot"
+```
+
+<br/>
+
+### Protecting sensitive configuration information
+
+<br/>
+
+```
+// ENCRYPT
+// POST
+$ curl \
+    --data postgres \
+    --header "Content-Type: text/plain" \
+    --request POST \
+    --url http://localhost:8071/encrypt
+```
+
+<br/>
+
+```
+// DECRYPT
+// POST
+$ curl \
+    --data d3c6fc76de9d78d0e36156f5f101c16e41daed579969659b8fe25ccddd241e2c \
+    --request POST \
+    --header "Content-Type: text/plain" \
+    --url http://localhost:8071/decrypt
+```
 
 <br/><br/>
 

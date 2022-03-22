@@ -19,7 +19,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Mave
 $ git clone https://github.com/ihuaylupo/manning-smia
 
 # Go into the repository
-$ cd chapter4/licensing-service
+$ cd chapter04/licensing-service
 
 # To build the code examples for Chapter 4 as a docker image, open a command-line 
 # window and execute the following command:
@@ -30,12 +30,6 @@ $ mvn clean package dockerfile:build
 $ docker-compose up
 ```
 
-## Contact
-
-I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd want to say about this software.
-
-### Contributing
-Feel free to file an issue if it doesn't work for your code sample. Thanks.
 
 
 <br/><br/>

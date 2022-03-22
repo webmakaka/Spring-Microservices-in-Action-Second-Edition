@@ -7,7 +7,6 @@
   <artifactId>ostock-parent-pom</artifactId>
   <packaging>pom</packaging>
 
-
   <name>optimagrowth-parent-pom</name>
   <description>Parent Pom for the optimagrowth project</description>
 
