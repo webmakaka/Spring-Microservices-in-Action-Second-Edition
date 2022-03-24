@@ -1,15 +1,21 @@
-## Spring Microservices in Action - Second Edition. Chapter 3
+# Spring Microservices in Action - Second Edition. Chapter 3
 
-## Introduction
+<br/>
+
+###  Introduction
 
 Code used on the 3rd Chapter of the Spring Microservices in Action - Second Edition Manning publication book. This code contains the Licensing Microservice.
 
-## Initial Configuration
+<br/>
+
+###  Initial Configuration
 
 1.	Apache Maven (http://maven.apache.org)
 2.	Git Client (http://git-scm.com)
 
-## How To Use
+<br/>
+
+### How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Maven](https://maven.apache.org/), [Java 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html). From your command line:
 

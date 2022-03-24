@@ -1,6 +1,9 @@
-## Spring Microservices in Action - Second Edition. Chapter 7
+# Spring Microservices in Action - Second Edition. Chapter 7
 
-# Introduction
+<br/>
+
+### Introduction
+
 Welcome to Spring Microservices in Action, Chapter 7.  Chapter 7 does not introduce any new services. Instead it focuses on how to use Spring Cloud and Resilience4j project to help protect service clients from failing or poorly behaving services. This chapter will introduce you to the concepts of fail-fast service calls, bulkheads and fallbacks for when a client call fails. 
 
 1.  A Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system/ classpath or GitHub-based repository.
@@ -9,53 +12,88 @@ Welcome to Spring Microservices in Action, Chapter 7.  Chapter 7 does not introd
 4.  A licensing service that will manage licensing data used within Ostock.
 5.  A Postgres SQL database used to hold the data.
 
-## Initial Configuration
-1.	Apache Maven (http://maven.apache.org)  All of the code examples in this book have been compiled with Java version 11.
-2.	Git Client (http://git-scm.com)
-3.  Docker(https://www.docker.com/products/docker-desktop)
 
 
-## How To Use
+<br/>
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Maven](https://maven.apache.org/), [Java 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html). From your command line:
+### Not Worked for me on update licensingservice to work with JDK17
 
-```bash
-# Clone this repository
-$ git clone https://github.com/ihuaylupo/manning-smia
+And working version:
 
-# Go into the repository, by changing to the directory where you have downloaded the 
-# chapter 7 source code and select whether you want the initial or final configuration
-$ cd chapter7
+```
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+		<resilience4j.version>1.7.1</resilience4j.version>
+```
 
-# To build the code examples for Chapter 7 as a docker image, open a command-line 
-# window and execute the following command:
+
+<br/>
+
+### How To Use
+
+
+```
+$ cd chapter07
+
 $ mvn clean package dockerfile:build
 
-# Now we are going to use docker-compose to start the actual image.  To start the docker image, stay in the directory containing  your chapter 7 source code and  Run the following command: 
 $ docker-compose -f docker/docker-compose.yml up
 ```
 
-# The build command
+<br/>
 
-Will execute the [Spotify dockerfile plugin](https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
+```
+// Restart
+$ docker-compose -f docker/docker-compose.yml rm -f
+$ docker-compose -f docker/docker-compose.yml up
+```
 
- Running the above command at the root of the project directory will build all of the projects.  If everything builds successfully you should see a message indicating that the build was successful.
+<br/>
 
-# The Run command
+```
+$ docker-compose -f docker/docker-compose.yml logs 
+```
 
-This command will run our services using the docker-compose.yml file located in the /docker directory. 
+<br/>
 
-If everything starts correctly you should see a bunch of Spring Boot information fly by on standard out.  At this point all of the services needed for the chapter code examples will be running.
+http://localhost:8070/
 
-# Database
-You can find the database script as well in the docker directory.
 
-## Contact
+<br/>
 
-I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd want to say about this software.
+**Same as in the previous chapter**
 
-### Contributing
-Feel free to file an issue if it doesn't work for your code sample. Thanks.
+
+![Application](/img/ch06-pic01.png?raw=true)
+
+
+<br/>
+
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --request GET \
+    --url http://localhost:8080/v1/organization/e6a625cc-718b-48c2-ac76-1dfdff9a531e/license/ \
+    | jq
+```
+
+<br/>
+
+**Result of failback code:**
+
+```
+[
+  {
+    "licenseId": "0000000-00-00000",
+    "organizationId": "e6a625cc-718b-48c2-ac76-1dfdff9a531e",
+    "productName": "Sorry no licensing information currently available",
+    "links": []
+  }
+]
+```
+
 
 
 <br/><br/>

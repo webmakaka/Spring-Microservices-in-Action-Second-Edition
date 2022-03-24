@@ -17,8 +17,8 @@
 	<properties>
 		<java.version>11</java.version>
 		<docker.image.prefix>ostock</docker.image.prefix>
-		<spring-cloud.version>Hoxton.SR11</spring-cloud.version>
-		<resilience4j.version>1.5.0</resilience4j.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+		<resilience4j.version>1.7.1</resilience4j.version>
 	</properties>
 
 	<dependencies>
