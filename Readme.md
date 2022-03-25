@@ -40,7 +40,7 @@ Let's read, watch, build, update code, etc.
 :heavy_check_mark: [chapter 05](/chapter05/Readme.md)    
 :heavy_check_mark: [chapter 06](/chapter06/Readme.md)    
 :heavy_check_mark: [chapter 07](/chapter07/Readme.md)    
-:x: [chapter 08](/chapter08/Readme.md)    
+:heavy_check_mark: [chapter 08](/chapter08/Readme.md)    
 :x: [chapter 09](/chapter09/Readme.md)    
 :x: [chapter 10](/chapter10/Readme.md)    
 :x: [chapter 11](/chapter11/Readme.md)    

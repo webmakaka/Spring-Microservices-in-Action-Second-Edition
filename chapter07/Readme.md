@@ -21,8 +21,8 @@ Welcome to Spring Microservices in Action, Chapter 7.  Chapter 7 does not introd
 And working version:
 
 ```
-		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-		<resilience4j.version>1.7.1</resilience4j.version>
+<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+<resilience4j.version>1.7.1</resilience4j.version>
 ```
 
 

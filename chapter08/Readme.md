@@ -1,6 +1,9 @@
-## Spring Microservices in Action - Second Edition. Chapter 8
+# Spring Microservices in Action - Second Edition. Chapter 8
 
-# Introduction
+<br/>
+
+### Introduction
+
 Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the concept of a API gateway. API gateways are using to enforce consistent policies and actions on all service calls. With this chapter we are going to introduce Spring Cloud Gateway.
 
 1.  A Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system/ classpath or GitHub-based repository.
@@ -10,53 +13,74 @@ Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the 
 5.  A licensing service that will manage licensing data used within Ostock.
 6.  A Postgres SQL database used to hold the data.
 
-## Initial Configuration
+<br/>
+
+### Initial Configuration
 1.	Apache Maven (http://maven.apache.org)  All of the code examples in this book have been compiled with Java version 11.
 2.	Git Client (http://git-scm.com)
 3.  Docker(https://www.docker.com/products/docker-desktop)
 
 
-## How To Use
+<br/>
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Maven](https://maven.apache.org/), [Java 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html). From your command line:
+### How To Use
 
-```bash
-# Clone this repository
-$ git clone https://github.com/ihuaylupo/manning-smia
+```
+$ cd chapter08
 
-# Go into the repository, by changing to the directory where you have downloaded the 
-# chapter 8 source code and select whether you want the initial or final configuration
-$ cd chapter8
-
-# To build the code examples for Chapter 8 as a docker image, open a command-line 
-# window and execute the following command:
 $ mvn clean package dockerfile:build
 
-# Now we are going to use docker-compose to start the actual image.  To start the docker image, stay in the directory containing  your chapter 8 source code and  Run the following command: 
 $ docker-compose -f docker/docker-compose.yml up
 ```
 
-# The build command
 
-Will execute the [Spotify dockerfile plugin](https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
+<br/>
 
- Running the above command at the root of the project directory will build all of the projects.  If everything builds successfully you should see a message indicating that the build was successful.
+```
+// Restart
+$ docker-compose -f docker/docker-compose.yml rm -f
+$ docker-compose -f docker/docker-compose.yml up
+```
 
-# The Run command
+<br/>
 
-This command will run our services using the docker-compose.yml file located in the /docker directory. 
+```
+$ docker-compose -f docker/docker-compose.yml logs 
+```
 
-If everything starts correctly you should see a bunch of Spring Boot information fly by on standard out.  At this point all of the services needed for the chapter code examples will be running.
+<br/>
 
-# Database
-You can find the database script as well in the docker directory.
+http://localhost:8070/
 
-## Contact
 
-I'd like you to send me an email on <illaryhs@gmail.com> about anything you'd want to say about this software.
+<br/>
 
-### Contributing
-Feel free to file an issue if it doesn't work for your code sample. Thanks.
+![Application](/img/ch08-pic01.png?raw=true)
+
+
+<br/>
+
+```
+// GET
+$ curl \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url http://localhost:8072/organization/v1/organization/e3f6a72b-7d6c-41da-ac12-fb30fcd1e547 \
+    | jq
+```
+
+<br/>
+
+**console output:**
+
+<br/>
+
+```
+docker-gatewayserver-1        | 2022-03-25 01:54:37.333 DEBUG 1 --- [or-http-epoll-4] c.o.gateway.filters.TrackingFilter       : tmx-correlation-id generated in tracking filter: e8137332-2037-418a-9c5c-89af9d9ee12d.
+docker-organizationservice-1  | Hibernate: select organizati0_.organization_id as organiza1_0_0_, organizati0_.contact_email as contact_2_0_0_, organizati0_.contact_name as contact_3_0_0_, organizati0_.contact_phone as contact_4_0_0_, organizati0_.name as name5_0_0_ from organizations organizati0_ where organizati0_.organization_id=?
+docker-gatewayserver-1        | 2022-03-25 01:54:37.343 DEBUG 1 --- [or-http-epoll-4] c.o.gateway.filters.ResponseFilter       : Adding the correlation id to the outbound headers. e8137332-2037-418a-9c5c-89af9d9ee12d
+docker-gatewayserver-1        | 2022-03-25 01:54:37.343 DEBUG 1 --- [or-http-epoll-4] c.o.gateway.filters.ResponseFilter       : Completing outgoing request for http://localhost:8072/v1/organization/e3f6a72b-7d6c-41da-ac12-fb30fcd1e547.
+```
 
 
 <br/><br/>
