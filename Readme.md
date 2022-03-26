@@ -37,14 +37,14 @@ Let's read, watch, build, update code, etc.
 :question: chapter 02  
 :heavy_check_mark: [chapter 03](/chapter03/Readme.md)  
 :heavy_check_mark: [chapter 04](/chapter04/Readme.md)    
-:heavy_check_mark: [chapter 05](/chapter05/Readme.md)    
-:heavy_check_mark: [chapter 06](/chapter06/Readme.md)    
-:heavy_check_mark: [chapter 07](/chapter07/Readme.md)    
+:heavy_check_mark: [chapter 05 - Configuration Server](/chapter05/Readme.md)    
+:heavy_check_mark: [chapter 06 - Service Discovery](/chapter06/Readme.md)    
+:heavy_check_mark: [chapter 07 - Resilience4j](/chapter07/Readme.md)    
 :heavy_check_mark: [chapter 08 - GateWay](/chapter08/Readme.md)    
 :question: [chapter 09 - Security](/chapter09/Readme.md)    
-:x: [chapter 10](/chapter10/Readme.md)    
-:x: [chapter 11](/chapter11/Readme.md)    
-:x: [chapter 12](/chapter12/Readme.md)    
+:x: [chapter 10 - Stream](/chapter10/Readme.md)    
+:x: [chapter 11 - Sleuth and Zipkin](/chapter11/Readme.md)    
+:x: [chapter 12 - Deploy](/chapter12/Readme.md)    
 
 <br/><br/>
 
