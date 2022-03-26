@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the concept of a API gateway. API gateways are using to enforce consistent policies and actions on all service calls. With this chapter we are going to introduce Spring Cloud Gateway.
+Chapter 8 introduces the concept of a API gateway. API gateways are using to enforce consistent policies and actions on all service calls. With this chapter we are going to introduce Spring Cloud Gateway.
 
 1.  A Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system/ classpath or GitHub-based repository.
 2. A Eureka server running as a Spring-Cloud based service. This service will allow multiple service instances to register with it. Clients that need to call a service will use Eureka to lookup the physical location of the target service.
@@ -13,12 +13,6 @@ Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the 
 5.  A licensing service that will manage licensing data used within Ostock.
 6.  A Postgres SQL database used to hold the data.
 
-<br/>
-
-### Initial Configuration
-1.	Apache Maven (http://maven.apache.org)  All of the code examples in this book have been compiled with Java version 11.
-2.	Git Client (http://git-scm.com)
-3.  Docker(https://www.docker.com/products/docker-desktop)
 
 
 <br/>
@@ -26,10 +20,7 @@ Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the 
 ### How To Use
 
 ```
-$ cd chapter08
-
 $ mvn clean package dockerfile:build
-
 $ docker-compose -f docker/docker-compose.yml up
 ```
 
@@ -51,6 +42,10 @@ $ docker-compose -f docker/docker-compose.yml logs
 <br/>
 
 http://localhost:8070/
+
+<br/>
+
+http://localhost:8080/auth
 
 
 <br/>

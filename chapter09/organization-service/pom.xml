@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<docker.image.prefix>ostock</docker.image.prefix>
-		<spring-cloud.version>Hoxton.SR11</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -49,6 +49,7 @@
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
 		    <scope>provided</scope>
+				<version>1.18.22</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -66,15 +67,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<exclusions>
-				<exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-ribbon</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.netflix.ribbon</groupId>
-                    <artifactId>ribbon-eureka</artifactId>
-                </exclusion>
-            </exclusions>
+					<exclusion>
+							<groupId>org.springframework.cloud</groupId>
+							<artifactId>spring-cloud-starter-ribbon</artifactId>
+					</exclusion>
+					<exclusion>
+							<groupId>com.netflix.ribbon</groupId>
+							<artifactId>ribbon-eureka</artifactId>
+					</exclusion>
+				</exclusions>
 		</dependency>
 		<dependency>
 		    <groupId>org.keycloak</groupId>
@@ -136,6 +137,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
